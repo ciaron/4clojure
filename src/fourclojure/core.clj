@@ -91,3 +91,61 @@
   []
   [20 30 40]
   )
+
+(defn ex14
+  ;; Clojure has many different ways to create functions.
+  ;;	
+  ;; (= __ ((fn add-five [x] (+ x 5)) 3))
+  ;; (= __ ((fn [x] (+ x 5)) 3))
+  ;; (= __ (#(+ % 5) 3))
+  ;; (= __ ((partial + 5) 3))
+  []
+
+  8)
+
+(defn ex15
+  ;; Write a function which doubles a number.
+  [x]
+  (* x 2)
+  )
+
+(defn ex16
+
+  ;; Write a function which returns a personalized greeting.
+  ;; (= (__ "Dave") "Hello, Dave!")
+  [name]
+  (str "Hello, " name "!"))
+
+(defn ex17
+  ;; The map function takes two arguments: a function (f) and a sequence (s). Map returns a new sequence consisting of the result of applying f to each item of s. Do not confuse the map function with the map data structure.
+  ;; (= __ (map #(+ % 5) '(1 2 3)))
+
+  []
+  '(6 7 8))
+
+(defn ex18
+  ;; The filter function takes two arguments: a predicate function (f) and a sequence (s). Filter returns a new sequence consisting of all the items of s for which (f item) returns true.
+
+  ;; (= __ (filter #(> % 5) '(3 4 5 6 7)))
+  []
+  '(6 7))
+
+(defn ex19
+  ;; Write a function which returns the last element in a sequence.
+  ;; Special restrictions: last
+  ;; (= (__ [1 2 3 4 5]) 5)
+  ;; (= (__ '(5 4 3)) 3)
+  ;; (= (__ ["b" "c" "d"]) "d")
+  [s]
+  (first (reverse s))
+  )
+
+(defn ex20
+  ;; Write a function which returns the second to last element from a sequence.
+  ;; (= (__ (list 1 2 3 4 5)) 4)
+  ;; (= (__ ["a" "b" "c"]) "b")
+  ;; (= (__ [[1 2] [3 4]]) [1 2])
+  [s]
+  (first (rest (reverse s)))
+  )
+
