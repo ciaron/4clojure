@@ -149,3 +149,36 @@
   (first (rest (reverse s)))
   )
 
+(defn ex21
+
+  ;; Write a function which returns the Nth element from a sequence.
+  ;; (= (__ '(4 5 6 7) 2) 6)
+  ;; (= (__ [:a :b :c] 0) :a)
+  ;; (= (__ [1 2 3 4] 1) 2)
+  ;; (= (__ '([1 2] [3 4] [5 6]) 2) [5 6])
+  ;; Special restrictions: nth
+
+  [coll index]
+
+  (first (drop index coll)))
+
+(defn ex22
+  ;; Write a function which returns the total number of elements in a sequence.
+  ;; (= (__ '(1 2 3 3 1)) 5)
+  ;; (= (__ "Hello World") 11)
+  ;; (= (__ [[1 2] [3 4] [5 6]]) 3)
+  ;; (= (__ '(13)) 1)
+  ;; (= (__ '(:a :b :c)) 3)
+  ;; special restrictions: count
+  [s]
+  (reduce + (map (constantly 1) s)))
+
+(defn ex23
+  ;; Write a function which reverses a sequence.
+  ;; (= (__ [1 2 3 4 5]) [5 4 3 2 1])
+  ;; (= (__ (sorted-set 5 7 2 7)) '(7 5 2))
+  ;; (= (__ [[1 2][3 4][5 6]]) [[5 6][3 4][1 2]])
+  ;; special restrictions: reverse, rseq
+  [s]
+  (reduce conj () s)
+  )
