@@ -182,3 +182,36 @@
   [s]
   (reduce conj () s)
   )
+
+(defn ex24
+  ;; Write a function which returns the sum of a sequence of numbers.
+  ;; (= (__ [1 2 3]) 6)
+  ;; (= (__ (list 0 -2 5 5)) 8)
+  ;; (= (__ #{4 2 1}) 7)
+  ;; (= (__ '(0 0 -1)) -1)
+  ;; (= (__ '(1 10 3)) 14)
+
+  [s]
+  (reduce + a))
+
+(defn ex25
+  ;; Write a function which returns only the odd numbers from a sequence.
+  ;; (= (__ #{1 2 3 4 5}) '(1 3 5))
+  ;; (= (__ [4 2 1 6]) '(1))
+  ;; (= (__ [2 2 4 6]) '())
+  ;; (= (__ [1 1 1 3]) '(1 1 1 3))
+
+  [s]
+  (filter #(= 1 (mod % 2)) s)
+  ;; or
+  ;; (filter odd? s)
+  )
+
+(defn ex26
+  ;; Write a function which returns the first X fibonacci numbers.
+  ;; (= (__ 3) '(1 1 2))
+  ;; (= (__ 6) '(1 1 2 3 5 8))
+  ;; (= (__ 8) '(1 1 2 3 5 8 13 21))
+  []
+  )
+
