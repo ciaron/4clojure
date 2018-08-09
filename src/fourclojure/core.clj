@@ -192,7 +192,7 @@
   ;; (= (__ '(1 10 3)) 14)
 
   [s]
-  (reduce + a))
+  (reduce + s))
 
 (defn ex25
   ;; Write a function which returns only the odd numbers from a sequence.
@@ -243,5 +243,125 @@
 
   ;; special restrictions: flatten
   
+  [s]
+  (mapcat #(if (sequential? %) (ex28 %) [%]) s)
+   
+  )
+
+(defn ex29
+
+  ;; Write a function which takes a string and returns a new string containing only the capital letters.
+  ;; (= (__ "HeLlO, WoRlD!") "HLOWRD")
+  ;; (empty? (__ "nothing"))
+  ;; (= (__ "$#A(*&987Zf") "AZ")
+  
+  [s]
+  (apply str (filter #(Character/isUpperCase %) s))
+  )
+
+(defn ex30
+
+  ;; Write a function which removes consecutive duplicates from a sequence.
+  ;; (= (apply str (__ "Leeeeeerrroyyy")) "Leroy")
+  ;; (= (__ [1 1 2 3 3 2 2 3]) '(1 2 3 2 3))
+  ;; (= (__ [[1 2] [1 2] [3 4] [1 2]]) '([1 2] [3 4] [1 2]))
+
+  [s]
+
+  (map first (partition-by identity s)))
+
+(defn ex31
+
+  ;; Write a function which packs consecutive duplicates into sub-lists.
+  ;; (= (__ [1 1 2 1 1 1 3 3]) '((1 1) (2) (1 1 1) (3 3)))
+  ;; (= (__ [:a :a :b :b :c]) '((:a :a) (:b :b) (:c)))
+  ;; (= (__ [[1 2] [1 2] [3 4]]) '(([1 2] [1 2]) ([3 4])))
+  []
+  )
+
+(defn ex32
+
+  ;; Write a function which duplicates each element of a sequence.
+  ;; (= (__ [1 2 3]) '(1 1 2 2 3 3))
+  ;; (= (__ [:a :a :b :b]) '(:a :a :a :a :b :b :b :b))
+  ;; (= (__ [[1 2] [3 4]]) '([1 2] [1 2] [3 4] [3 4]))
+  ;; (= (__ [[1 2] [3 4]]) '([1 2] [1 2] [3 4] [3 4]))
+  []
+  )
+(defn ex33
+
+  ;; Write a function which replicates each element of a sequence a variable number of times.
+  ;; (= (__ [1 2 3] 2) '(1 1 2 2 3 3))
+  ;; (= (__ [:a :b] 4) '(:a :a :a :a :b :b :b :b))
+  ;; (= (__ [4 5 6] 1) '(4 5 6))
+  ;; (= (__ [[1 2] [3 4]] 2) '([1 2] [1 2] [3 4] [3 4]))
+  ;; (= (__ [44 33] 2) [44 44 33 33])
+  []
+  )
+
+(defn ex34
+
+  ;; Write a function which creates a list of all integers in a given range.
+  ;; (= (__ 1 4) '(1 2 3))
+  ;; (= (__ -2 2) '(-2 -1 0 1)) 
+  ;; (= (__ 5 8) '(5 6 7))
+
+  ;; special restrictions: range
+  []
+  )
+
+(defn ex35
+
+  ;; Clojure lets you give local names to values using the special let-form.
+  ;; (= __ (let [x 5] (+ 2 x)))
+  ;; (= __ (let [x 3, y 10] (- y x)))
+  ;; (= __ (let [x 21] (let [y 3] (/ x y))))
+  []
+  )
+
+(defn ex36
+
+  ;; Can you bind x, y, and z so that these are all true?
+  ;; (= 10 (let __ (+ x y)))
+  ;; (= 4 (let __ (+ y z)))
+  ;; (= 1 (let __ z))
+  []
+  )
+
+(defn ex37
+  ;; Regex patterns are supported with a special reader macro.
+  ;; (= __ (apply str (re-seq #"[A-Z]+" "bA1B3Ce ")))
+  []
+  )
+
+(defn ex38
+  ;; Write a function which takes a variable number of parameters and returns the maximum value.
+  ;; (= (__ 1 8 3 4) 8)
+  ;; (= (__ 30 20) 30)
+  ;; (= (__ 45 67 11) 67)
+
+  ;; special restrictions: max, max-key
+  []
+  )
+
+(defn ex39
+  ;; Write a function which takes two sequences and returns the first item from each, then the second item from each, then the third, etc.
+  ;; (= (__ [1 2 3] [:a :b :c]) '(1 :a 2 :b 3 :c))
+  ;; (= (__ [1 2] [3 4 5 6]) '(1 3 2 4))
+  ;; (= (__ [1 2 3 4] [5]) [1 5])
+  ;; (= (__ [30 20] [25 15]) [30 25 20 15])
+
+  ;; special restrictions: interleave
+
+  []
+  )
+
+(defn ex40
+  ;; Write a function which separates the items of a sequence by an arbitrary value.
+  ;; (= (__ 0 [1 2 3]) [1 0 2 0 3])
+  ;; (= (apply str (__ ", " ["one" "two" "three"])) "one, two, three")
+  ;; (= (__ :z [:a :b :c :d]) [:a :z :b :z :c :z :d])
+  ;; special restrictions: interpose
+
   []
   )
