@@ -207,11 +207,41 @@
   ;; (filter odd? s)
   )
 
+(defn fib1
+  [[ a b ]]
+  [b (+ a b)]
+  )
+  
 (defn ex26
   ;; Write a function which returns the first X fibonacci numbers.
   ;; (= (__ 3) '(1 1 2))
   ;; (= (__ 6) '(1 1 2 3 5 8))
   ;; (= (__ 8) '(1 1 2 3 5 8 13 21))
-  []
+  [n]
+  ;; using iterate, we generate [a b] pairs
+  (map first (take n (iterate fib1 [1 1])))
   )
 
+(defn ex27
+  ;; Write a function which returns true if the given sequence is a palindrome.
+
+  ;; Hint: "racecar" does not equal '(\r \a \c \e \c \a \r)
+  ;; (false? (__ '(1 2 3 4 5)))
+  ;; (true? (__ "racecar"))
+  ;; (true? (__ [:foo :bar :foo]))
+  ;; (true? (__ '(1 1 3 3 1 1)))
+  ;; (false? (__ '(:a :b :c)))
+  [a]
+  (= (seq a) (reverse (seq a)))
+  )
+
+(defn ex28
+  ;; Write a function which flattens a sequence.
+  ;; (= (__ '((1 2) 3 [4 [5 6]])) '(1 2 3 4 5 6))
+  ;; (= (__ ["a" ["b"] "c"]) '("a" "b" "c"))
+  ;; (= (__ '((((:a))))) '(:a))
+
+  ;; special restrictions: flatten
+  
+  []
+  )
